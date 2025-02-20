@@ -27,3 +27,10 @@ def takeExpenses():
 
  return expenses
 
+
+#Function to calculate the allocated amounts
+def calculateAmounts(salary,expenses):
+ for expense in expenses:
+  expense["amount"] =( expense["percentage"]/100)*salary
+  
+ return expenses
