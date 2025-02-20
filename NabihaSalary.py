@@ -34,3 +34,12 @@ def calculateAmounts(salary,expenses):
   expense["amount"] =( expense["percentage"]/100)*salary
   
  return expenses
+
+# Function to find total expenses 
+def findTotal(expenses):
+ total = 0
+
+ for expense in expenses:
+   total = total + expense ["amount"] 
+
+ return total
