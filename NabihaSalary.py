@@ -43,3 +43,19 @@ def findTotal(expenses):
    total = total + expense ["amount"] 
 
  return total
+
+# Function to display the financial summary 
+def displaysummary (details, expenses,totalexpenses):
+ print("------------------ Financial Summary ------------------")
+ print(f"User: {details['user']}")
+ print(f"Month: {details['month']}")
+ print(f"Salary: ${details['salary']}")
+    
+ print("Allocations:")
+ for expense in expenses:
+        print(f" - {expense['category']}: ${expense['amount']} ({expense['percentage']}%)")
+    
+ remainingsalary = details["salary"] - totalexpenses
+ print(f"Total Expenses: ${totalexpenses}")
+ print(f"Remaining Salary: ${remainingsalary}")
+ print("------------------------------------------------------")
