@@ -65,6 +65,28 @@ def displaysummary (details, expenses,totalexpenses):
  remainingsalary = details["salary"] - totalexpenses
  print(f"Total Expenses: ${totalexpenses}")
  print(f"Remaining Salary: ${remainingsalary}")
+ # Additional calculations  
+ rent = next(exp["amount"] for exp in expenses if exp["category"] == "Rent")  
+ electricity = next(exp["amount"] for exp in expenses if exp["category"] == "Electricity")  
+ yearlyrent = rent * 12  
+ yearlyelectricity = electricity * 12  
+ salarysquared = details["salary"] ** 2 
+
+ # Assume additional savings boost
+ additionalsavings = 50  
+ savingsamount = next(exp["amount"] for exp in expenses if exp["category"] == "Savings")
+    
+ if savingsamount > 0:
+        savingboost = additionalsavings / savingsamount  
+        remainingaftersavingsboost = savingboost + savingsamount
+ else:
+        remainingaftersavingsboost = "N/A (No savings allocation)" 
+
+ print("Additional Insights:")  
+ print(f" - Yearly Rent: ${yearlyrent}")  
+ print(f" - Yearly Electricity Cost: ${yearlyelectricity}")  
+ print(f" - Salary squared (for fun): ${salarysquared }")  
+ print(f" - Remaining after additional savings boost: ${remainingaftersavingsboost}")  
  print("------------------------------------------------------")
 
 # Function to get salary for each of the 12 months
