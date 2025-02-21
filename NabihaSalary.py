@@ -1,8 +1,15 @@
 # Function of initsalary
 def initsalary(yearlysalaries):
  name = input ("Enter your name: ")
- month = input ("Enter the month: ")
 
+ while True:
+        month = input("Enter the month you want to manage: ")
+        
+        if month in yearlysalaries:
+            break
+        else:
+            print("Invalid month name. Please enter a valid month (e.g., 'Jan', 'Feb').")
+    
  details = {
     "user": name,
     "month" : month, 
