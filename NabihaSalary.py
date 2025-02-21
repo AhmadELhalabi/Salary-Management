@@ -1,12 +1,12 @@
 # Function of initsalary
-def initsalary():
+def initsalary(yearlysalaries):
  name = input ("Enter your name: ")
  month = input ("Enter the month: ")
 
  details = {
     "user": name,
     "month" : month, 
-    "salary" : float (input("Enter your salary for the month: "))
+    "salary" : yearlysalaries[month]
 }
  return details 
 
@@ -76,7 +76,6 @@ def getYearlySalaries():
     return yearlysalaries
 
 # ---- MAIN PROGRAM LOOP ---- :
-
 yearlysalaries = getYearlySalaries()
 print("Yearly Salaries:", yearlysalaries)
 
