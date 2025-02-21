@@ -59,3 +59,18 @@ def displaysummary (details, expenses,totalexpenses):
  print(f"Total Expenses: ${totalexpenses}")
  print(f"Remaining Salary: ${remainingsalary}")
  print("------------------------------------------------------")
+
+# Function to get salary for each of the 12 months
+def getYearlySalaries():
+    months = [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+        "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
+    ]
+    yearlysalaries = {}
+
+    print("Enter your salary for each month:")
+    for month in months:
+        salary = float(input(f"{month}: "))
+        yearlysalaries[month] = salary
+    
+    return yearlysalaries
