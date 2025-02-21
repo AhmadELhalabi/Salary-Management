@@ -74,3 +74,25 @@ def getYearlySalaries():
         yearlysalaries[month] = salary
     
     return yearlysalaries
+
+# ---- MAIN PROGRAM LOOP ---- :
+
+yearlysalaries = getYearlySalaries()
+print("Yearly Salaries:", yearlysalaries)
+
+listofsummaries = []
+action = "yes"
+
+while action.lower() != "no":
+    salarydetails = initsalary(yearlysalaries)
+    salarydetails["expenses"] = takeExpenses()
+    salarydetails["expenses"] = calculateAmounts(salarydetails["salary"], salarydetails["expenses"])
+    salarydetails["total_expenses"] = findTotal(salarydetails["expenses"])
+    
+    listofsummaries.append(salarydetails)
+    
+    displaysummary(salarydetails, salarydetails["expenses"], salarydetails["total_expenses"])
+    
+    action = input("\nWould you like to create another financial summary? (yes/no): ")
+
+print("\nAll summaries:", listofsummaries)
